@@ -55,8 +55,7 @@ const BookDetails = () => {
                             defaultColDef={defaultColDef}
                             rowSelection="multiple"
                             suppressRowClickSelection={true}
-                            pagination={true}         
-                            paginationAutoPageSize={false}                   
+                            pagination={true}                   
                             autofitCols = {true}
                             domLayout = 'autoHeight'
                             paginationPageSize={10}
