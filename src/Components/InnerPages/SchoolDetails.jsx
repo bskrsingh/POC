@@ -10,18 +10,13 @@ import ToastContainer from 'react-bootstrap/ToastContainer';
 const SchoolDetails = () => {
 
     const [valid, setValid] = useState(false);
-    const [schoolName, setSchoolName] = ('');
+    const [schoolName] = ('');
 
     const navigate = useNavigate();
 
     const SubmitSchoolDetails = () => {
-        debugger
-        if (schoolName) {
             setValid(false)
             navigate("/uploadBook");
-        } else {
-            setValid(true)
-        }
     }
 
     return (
@@ -37,7 +32,7 @@ const SchoolDetails = () => {
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>School Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter School name" value={setSchoolName} />
+                            <Form.Control type="text" placeholder="Enter School name" value={schoolName} />
                         </Form.Group>
                         <Button variant="primary" type="submit" onClick={SubmitSchoolDetails}>
                             Submit
