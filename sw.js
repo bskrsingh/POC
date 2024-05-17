@@ -10,7 +10,8 @@ this.addEventListener('install',(event)=>{
                 '/bookDetails',
                 '/bookListing',
                 '/schoolDetails',
-                '/uploadBook'
+                '/uploadBook',
+                '/static/js/main.544e39f5.js'
             ])
         })
     )
