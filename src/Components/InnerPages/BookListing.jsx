@@ -18,10 +18,10 @@ const BookDetails = () => {
     },[])
 
     const [bookcolumnDefs] = useState([
-        { field: "username", headerName:'Publications', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
-        { field: "name", headerName:'Author', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
-        { field: "pubDate", headerName:'Publication Date', filter: 'agNumberColumnFilter', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
-        { field: "website", headerName:'Website', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor'},
+        { field: "username", headerName:'Publications', checkboxSelection: false, editable: true,tooltipField:'username'},
+        { field: "name", headerName:'Author', checkboxSelection: false, editable: true,tooltipField:'name'},
+        { field: "pubDate", headerName:'Publication Date', filter: 'agNumberColumnFilter', checkboxSelection: false, editable: true,tooltipField:'pubDate', },
+        { field: "website", headerName:'Website', checkboxSelection: false, editable: true,tooltipField:'website',},
     ]);
 
     const [filerowData] = useState([
@@ -30,9 +30,9 @@ const BookDetails = () => {
     ]);
 
     const [filecolumnDefs] = useState([
-        { field: "filePrint", checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
-        { field: "specsPages", checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
-        { field: "pubDate", filter: 'agNumberColumnFilter', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
+        { field: "filePrint", checkboxSelection: false, editable: true,tooltipField:'filePrint', },
+        { field: "specsPages", checkboxSelection: false, editable: true,tooltipField:'specsPages', },
+        { field: "pubDate", filter: 'agNumberColumnFilter', checkboxSelection: false, editable: true,tooltipField:'pubDate', },
     ]);
 
     const defaultColDef = useMemo(() => {
@@ -72,8 +72,7 @@ const BookDetails = () => {
                             defaultColDef={defaultColDef}
                             rowSelection="multiple"
                             suppressRowClickSelection={true}
-                            pagination={true}         
-                            paginationAutoPageSize={false}                   
+                            pagination={true}                    
                             autofitCols = {true}
                             domLayout = 'autoHeight'
                             paginationPageSize={5}

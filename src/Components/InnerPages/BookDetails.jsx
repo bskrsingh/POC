@@ -29,9 +29,9 @@ const BookDetails = () => {
     }
 
     const [columnDefs] = useState([
-        { field: "id", headerName:'ID', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
-        { field: "name", headerName:'Title', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
-        { field: "body", headerName:'Comment', filter: 'agNumberColumnFilter', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
+        { field: "id", headerName:'ID', checkboxSelection: false, tooltipField:'id', editable: true },
+        { field: "name", headerName:'Title', checkboxSelection: false,tooltipField:'name', editable: true},
+        { field: "body", headerName:'Comment',tooltipField:'body', editable: true},
     ]);
 
     const defaultColDef = useMemo(() => {
