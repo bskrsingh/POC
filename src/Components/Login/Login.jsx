@@ -1,32 +1,35 @@
 import React, { useState } from "react";
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import image from '../assests/images/logo.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { Button } from "react-bootstrap";
+import Toast from 'react-bootstrap/Toast';
+import ToastContainer from 'react-bootstrap/ToastContainer';
 
 const Login = () => {
     const navigate = useNavigate();
-
+    const [valid, setValid] = useState(false)
     const [value, setValue] = useState('')
 
 
 
     const [name, setClassName] = useState('')
 
-    const [otp1,setOtp1] = useState('')
-    const [otp2,setOtp2] = useState('')
-    const [otp3,setOtp3] = useState('')
-    const [otp4,setOtp4] = useState('')
+    const [otp1, setOtp1] = useState('')
+    const [otp2, setOtp2] = useState('')
+    const [otp3, setOtp3] = useState('')
+    const [otp4, setOtp4] = useState('')
 
     const handleGetOTP = () => {
         const number = {
             otp: Math.floor(1000 + Math.random() * 9000),
             number: value
         }
-        
-        if (value) {
+
+        if (value) {            
+            setValid(false)
             setTimeout(() => {
                 setClassName('flip-card-inner-rotate')
                 console.log("details", number)
@@ -38,14 +41,16 @@ const Login = () => {
             setOtp2(otpSplit[1])
             setOtp3(otpSplit[2])
             setOtp4(otpSplit[3])
+        } else {
+            setValid(true)
         }
     }
 
-    const otpChange = () =>{
+    const otpChange = () => {
         setClassName('')
     }
 
-    const Login = () =>{
+    const Login = () => {
         navigate("/schoolDetails");
     }
 
@@ -55,6 +60,12 @@ const Login = () => {
                 <div className="flip-card-front">
                     <span>Login</span>
                     <img src={image} title="poc" alt="poc" className="logo" />
+                    <ToastContainer position="top-end" className="p-3" style={{ zIndex: 1 }}>
+                    <Toast onClose={() => setValid(false)} show={valid} delay={5000} autohide bg='danger'>
+                        <Toast.Body className='text-white'>Please Enter the Phone Number with Selected Country</Toast.Body>
+                    </Toast>
+                    </ToastContainer>
+
                     <PhoneInput
                         defaultCountry="IN"
                         placeholder="Enter phone number"
@@ -71,10 +82,10 @@ const Login = () => {
                     </p>
 
                     <div className="wrapper">
-                        <input type="text" value={otp1} className="field 1"/>
-                        <input type="text" value={otp2} className="field 2"/>
-                        <input type="text" value={otp3} className="field 3"/>
-                        <input type="text" value={otp4} className="field 4"/>
+                        <input type="text" value={otp1} className="field 1" />
+                        <input type="text" value={otp2} className="field 2" />
+                        <input type="text" value={otp3} className="field 3" />
+                        <input type="text" value={otp4} className="field 4" />
                     </div>
                     <Button type="button" className="btnAlign" variant="primary" onClick={Login}>
                         Login
