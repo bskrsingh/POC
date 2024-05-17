@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  html,
+  body {
+    background-color: #ffb836 !important;
+  }
+  
+  .containers {
+    background-color: #ffb836;
+  }
+  
+  h3.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #093030;
+    margin-bottom: 25px;
+  }
+  
+  p.sub-title {
+    color: #B5BAB8;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  
+  p span.phone-number {
+    display: block;
+    color: #093030;
+    font-weight: 600;
+  }
+
+  .logo {
+    height: 58px;
+    width: 100px;
+    margin: 10px auto;
+    display: block;
+  }
+  
+  .wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: space-between;
+  }
+  
+  .wrapper input.field {
+    width: 50px;
+    line-height: 75px;
+    font-size: 32px;
+    border: none;
+    background-color: #EAF5F6;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #093030;
+    margin-bottom: 25px;
+  }
+  
+  .wrapper input.field:focus {
+    outline: none;
+  }
+  
+  button.resend {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    color: #3DAFE1;
+    cursor: pointer;
+  }
+  
+  button.resend i {
+    margin-left: 5px;
+  }
+
+  .flip-card {
+    width: 100%;
+    height:400px;
+    padding:10px;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card-inner-rotate {
+    transform: rotateY(180deg);
+  }
+
+  .PhoneInputInput{padding:10px !important}
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #fff;
+    color: black;
+    padding:50px;
+  }
+  
+  .flip-card-back {
+    background-color:#fff;
+    color: white;
+    transform: rotateY(180deg);
+    padding:50px
+  }
+
+  .getOtp{background-color: #3DAFE1;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 20px;
+    border: transparent;
+    font-weight: 600;}
+    .cardProps{border:transparent !important;}

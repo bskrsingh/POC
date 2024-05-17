@@ -1,23 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { HashRouter , Routes, Route } from "react-router-dom";
 import './index.css';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
+import Login from './Components/Login/Login';
+import SchoolDetails from './Components/InnerPages/SchoolDetails';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-quartz.css';
+import BooKListUpload from './Components/InnerPages/BookListUpload';
+import BookDetails from './Components/InnerPages/BookDetails';
+import BookListing from './Components/InnerPages/BookListing';
+
+import swDev from './swDev';
+
+export default function App() {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/schoolDetails" element={<SchoolDetails />} />
+        <Route path="/uploadBook" element={<BooKListUpload />} />
+        <Route path="/bookDetails" element={<BookDetails />} />
+        <Route path="/bookListing" element={<BookListing />} />
+      </Routes>
+    </HashRouter>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
-serviceWorkerRegistration.unregister();
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(<App />);
+swDev();
