@@ -57,8 +57,7 @@ const BookDetails = () => {
                             defaultColDef={defaultColDef}
                             rowSelection="multiple"
                             suppressRowClickSelection={true}                           
-                            pagination={true}         
-                            paginationAutoPageSize={true}                   
+                            pagination={true}                   
                             autofitCols = {true}
                             domLayout = 'autoHeight'
                             paginationPageSize={5}
@@ -74,7 +73,7 @@ const BookDetails = () => {
                             rowSelection="multiple"
                             suppressRowClickSelection={true}
                             pagination={true}         
-                            paginationAutoPageSize={true}                   
+                            paginationAutoPageSize={false}                   
                             autofitCols = {true}
                             domLayout = 'autoHeight'
                             paginationPageSize={5}
