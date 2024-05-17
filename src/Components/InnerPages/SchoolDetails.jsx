@@ -15,6 +15,7 @@ const SchoolDetails = () => {
     const navigate = useNavigate();
 
     const SubmitSchoolDetails = () => {
+        debugger
         if (schoolName) {
             setValid(false)
             navigate("/uploadBook");

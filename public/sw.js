@@ -7,8 +7,10 @@ this.addEventListener('install',(event)=>{
                 '/index.html',
                 '/',
                 '/book-store',
-                'bookDetails',
-                'bookListing',
+                '/bookDetails',
+                '/bookListing',
+                '/schoolDetails',
+                '/uploadBook'
             ])
         })
     )
